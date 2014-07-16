@@ -12,18 +12,27 @@ class LinkedList
 	end
 
 	def insert_end(data)
-		last_node = @head
+		if @head == nil
+			@head = ListNode.new(data)
+		else
+			last_node = @head
 
-		while (last_node.next != nil)
-			last_node = last_node.next
+			while (last_node.next != nil)
+				last_node = last_node.next
+			end
+
+			last_node.next = ListNode.new(data)
 		end
-
-		last_node.next = ListNode.new(data)
+		@size += 1
 	end
 
 	def length
 		@size
-	end	
+	end
+
+	def squish
+
+	end
 end
 
 class ListNode
