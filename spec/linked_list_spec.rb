@@ -81,10 +81,11 @@ describe LinkedList do
 	  linked_list_data = []
 	  node = linked_list.head
 
-	  while (node.next != nil)
+	  while (node != nil)
 	  	linked_list_data << node.data
 	  	node = node.next
 	  end
+	  binding.pry
 
 	  squished = [0,1,0,3,1,0]
 	  for i in (0...squished.length)

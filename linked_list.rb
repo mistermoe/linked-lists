@@ -31,7 +31,29 @@ class LinkedList
 	end
 
 	def squish
+		original_size = self.length
+		stepper = 1
 
+		while stepper < original_size
+
+			if @head.data == @head.next.data
+				@head = @head.next
+			else
+				node = @head.data
+				self.insert_end(node)
+
+				@head = @head.next
+			end
+
+			stepper += 1
+			@size -= 1
+		end
+
+		node = @head.data
+		self.insert_end(node)
+		@head = @head.next
+		@size -= 1
+		    binding.pry
 	end
 end
 
